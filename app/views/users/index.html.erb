@@ -30,7 +30,7 @@
 		   	  <td><%= user.technology %></td>
 		   	  <td><%= user.job_status %></td>
 		   	  <td><%= user.description %></td>
-		   	  <td><%= link_to "Edit", edit_user_path(user.id) %> | <%= link_to "Delete", user_path(user.id), method: :delete, data: {confirm: "Are you Sure ?"} %></td>
+		   	  <td><%= link_to edit_user_path(user.id) do%><span class = "glyphicon glyphicon-pencil"></span><% end %> | <%= link_to user_path(user.id), method: :delete, data: {confirm: "Are you Sure ?"}  do %><span class = "glyphicon glyphicon-trash"></span><% end %></td>
 		   </tr>
 		<% end %>
 	
