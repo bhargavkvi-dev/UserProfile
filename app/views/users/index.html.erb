@@ -1,0 +1,43 @@
+<h3>Listing Users</h3>
+
+<table id="table_id" class="table table-hover">
+
+	<thead>
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Gender</th>
+			<th>Company</th>
+			<th>City</th>
+			<th>Email</th>
+			<th>Mobile Number</th>
+			<th>Interested Technology</th>
+			<th>Job Status</th>
+			<th>Description</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @users.each do |user| %>
+		   <tr>
+		   	  <td><%= user.first_name %></td>
+		   	  <td><%= user.last_name %></td>
+		   	  <td><%= user.gender %></td>
+		   	  <td><%= user.company %></td>
+		   	  <td><%= user.city %></td>
+		   	  <td><%= user.email %></td>
+		   	  <td><%= user.mobile_number %></td>
+		   	  <td><%= user.technology %></td>
+		   	  <td><%= user.job_status %></td>
+		   	  <td><%= user.description %></td>
+		   	  <td><%= link_to "Edit", edit_user_path(user.id) %> | <%= link_to "Delete", user_path(user.id), method: :delete, data: {confirm: "Are you Sure ?"} %></td>
+		   </tr>
+		<% end %>
+	
+	</tbody>
+</table>
+
+
+
+<%= link_to "Add User", new_user_path %>
+
