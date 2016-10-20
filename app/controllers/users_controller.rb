@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
+
+ helper_method :sort_column, :sort_direction
+ 
+
 	def index
-		@users = User.all
-	end
+	    @users = User.filter(params[:first_name], params[:last_name], params[:city], params[:gender], params[:technology]).order("#{sort_column} #{sort_direction}").paginate(page: params[:page], per_page: 5)   
+    end
 
 	def new
 		@user = User.new
@@ -40,4 +44,24 @@ class UsersController < ApplicationController
 	def user_params
 		params[:user].permit(:first_name, :last_name, :gender, :company, :city, :email, :mobile_number, :technology, :job_status, :description)
 	end
+
+	def sortable_columns
+    	["first_name", "last_name", "company", "job_status"]
+    end
+
+    def sort_column
+    	hash = {"Last Name" => "last_name", "First Name" => "first_name", "Company" => "company", "Job Status" => "job_status"}
+    	s = hash[params[:column]]
+    	unless s.present?
+    		s = "first_name"
+    	end
+    	s 
+	end
+
+	def sort_direction
+    	%w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  	end
+
+ 
+
 end
