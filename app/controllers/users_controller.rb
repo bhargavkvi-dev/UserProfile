@@ -4,7 +4,7 @@ class UsersController < ApplicationController
  
 
 	def index
-	    @users = User.filter(params[:first_name], params[:last_name], params[:city], params[:gender], params[:technology]).order("#{sort_column} #{sort_direction}").paginate(page: params[:page], per_page: 5)   
+	    @users = User.filter(params[:first_name], params[:last_name], params[:city], params[:gender], params[:technology]).order("#{sort_column} #{sort_direction}").paginate(page: params[:page], per_page: 3)   
     end
 
 	def new

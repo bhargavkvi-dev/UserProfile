@@ -15,9 +15,12 @@
 
 //= require_tree .
 
-
+// DataTables
 // $(document).ready(function(){
 //     $('#table_id').DataTable();
 // });
 
-
+// AJAX Pagination
+$(document).ready(function() {
+  $('.pagination > a').attr('data-remote', 'true');
+});
