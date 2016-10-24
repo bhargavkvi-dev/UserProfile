@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'ransack', '~> 1.7'
-
+gem 'haml', '~> 4.0', '>= 4.0.7'
 
 gem 'will_paginate', '~> 3.1'
 # Use ActiveModel has_secure_password
@@ -48,4 +48,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
+
+
 

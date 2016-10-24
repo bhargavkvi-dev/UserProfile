@@ -1,4 +1,4 @@
-
+ 
 <%= form_for @user do |f| %>
 
    <% if @user.errors.full_messages %>
@@ -44,3 +44,70 @@
    <%= f.submit "Submit", class: "btn-primary" %>
 
 <% end %>
+
+
+<!-- = form_for @user do |f|
+   - if @user.errors.full_messages
+      %ul 
+         - for msg in @user.errors.full_messages
+         % li= msg
+   %label First Name :
+   %br/
+   = f.text_field :first_name, class: "form-control", autofocus: true, placeholder: "Enter First Name here" 
+   %br/
+   %label Last Name :
+   %br/
+   = f.text_field :last_name, class: "form-control", autofocus: true, placeholder: "Enter Last Name here"
+   %br/
+   %label Gender :
+   %br/
+   = f.radio_button :gender, 'Male'
+   Male
+   = f.radio_button :gender, 'Female'
+   Female
+   %br/
+   %br/
+   %label Company :
+   %br/
+   = f.text_field :company, class: "form-control", placeholder: "Enter Comapny Name here"
+   %br/
+   %label City :
+   %br/
+   = f.text_field :city, class: "form-control", placeholder: "Enter City here"
+   %br/
+   %label Email :
+   br/
+   = f.email_field :email, class: "form-control", placeholder: "Enter Email here"
+   %br/
+   %label Mobile No :
+   %br/
+   = f.text_field :mobile_number, class: "form-control",  placeholder: "Enter Mobile Number here" 
+   %br/
+   %label Interested Technology :
+   %br/
+   = f.select :technology, ["Web Development","Web Designing","Testing"],prompt: "Select Technology", class: "form-control" 
+   %br/
+   %label Job Status :
+   %br/
+   = f.check_box :job_status 
+   %br/
+   %label Description :
+   %br/
+   = f.text_area :description, class: "form-control", placeholder: "Enter Description here"
+   %br/
+   = f.submit "Submit", class: "btn-primary" -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

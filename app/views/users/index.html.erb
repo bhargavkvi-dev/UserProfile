@@ -1,11 +1,36 @@
+
 <div class="col-md-9" id="users">
-      <%= render 'users' %>
-</div>             
+   <%= render 'users' %>
+      <div class="row">
+          <div class="col-md-7 col-md-offset-2" id="user-form" style="display:none;"></div>
+      </div>
+</div>   
 
 
 <div id="forms" class="col-md-3">
   <%= render 'filters' %>
 </div>
+
+
+<!-- .col-md-9{:id => "users"}
+      = render 'form'
+        .row
+          .col-md-7 col-md-offset-2{:id => "user-form" :style => "display:none;"}
+
+.col-md-3{:id => "forms"}
+      =render 'filters'
+ -->
+
+
+ 
+
+
+
+
+
+
+
+
 
 
 

@@ -32,7 +32,7 @@
 			   	  <td><%= user.technology %></td>
 			   	  <td><%= user.job_status %></td>
 			   	  <td><%= user.description %></td>
-			   	  <td><%= link_to edit_user_path(user.id) do%><span class = "glyphicon glyphicon-pencil"></span><% end %> | <%= link_to user_path(user.id), method: :delete, data: {confirm: "Are you Sure ?"}  do %><span class = "glyphicon glyphicon-trash"></span><% end %></td>
+			   	  <td><%= link_to edit_user_path(user.id), remote: true do%><span class = "glyphicon glyphicon-pencil"></span><% end %> | <%= link_to user_path(user.id), method: :delete, data: {confirm: "Are you Sure ?"}  do %><span class = "glyphicon glyphicon-trash"></span><% end %></td>
 			   </tr>
 			<% end %>
 		
@@ -41,12 +41,61 @@
 
 	<strong><%= will_paginate @users%></strong>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 
-	<%= link_to new_user_path, class: "btn btn-info" do %>
+	<%= link_to new_user_path, remote: true, class: "btn btn-info" do %>
 		<i class="glyphicon glyphicon-plus"><strong>Add User</strong></i>
 	<% end %>
 
   </div>
 </div>
+
+
+<!-- .panel.panel-default
+	.panel-heading %h3 %strong Listing Users
+		.panel-body
+			%table.table.table-hover
+				%thead
+					%tr
+						%th = sort_link "First Name" 
+						%th = sort_link "Last Name" 
+						%th Gender
+						%th = sort_link "Company" 
+						%th City
+						%th Email
+						%th Mobile No
+						%th Interested Technology
+						%th sort_link "Job Status" 
+						%th Description
+						%th Actions
+				%tbody
+					- @users.each do |user|
+						%tr
+							%td = user.first_name 
+							%td = user.last_name
+							%td = user.gender 
+							%td = user.company
+							%td = user.city
+							%td = user.email
+							%td = user.mobile_number 
+							%td = user.technology
+							%td = user.job_status
+							%td = user.description
+							%td 
+								= link_to edit_user_path(user.id), remote: true do
+									%span.glyphicon.glyphicon-pencil"
+									|
+								= link_to user_path(user.id), method: :delete, data: {confirm: "Are you Sure ?"}  do
+									%span.glyphicon.glyphicon-trash 
+
+			%strong = will_paginate @users	
+			
+			= link_to new_user_path, remote: true, class: "btn btn-info" do 	
+				%i.glyphicon.glyphicon-plus
+				%strong Add User					
+ -->
+
+
+
+
 
 
 

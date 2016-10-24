@@ -26,10 +26,38 @@
 
       			<%= submit_tag "Filter Record", class: "btn btn-info"  %>
 
-                        <%= link_to "Clear Filter", request.path, class:"btn btn-info" %>
+            <%= link_to "Clear Filter", request.path, class:"btn btn-info" %>
 
       			
 			<% end %>
 
       </div>
 </div>
+
+<!-- .panel.panel-info
+  .panel-heading %h4 %strong Filters
+    .panel-body
+      = form_tag users_path, :method=> "get", :remote => true do
+        = label_tag :first_name, "First Name"
+        = text_field_tag :first_name,nil,:class => "form-control"
+        %br/
+        = label_tag :last_name, "Last Name"
+        = text_field_tag :last_name,nil,:class => "form-control"
+        %br/
+        = label_tag :city, "City"
+        = text_field_tag :city,nil,:class => "form-control"
+        %br/
+        = label_tag :gender, "Gender"
+        %br/
+        = radio_button_tag :gender, 'Male'
+        Male
+        = radio_button_tag :gender, 'Female'
+        Female
+        %br/
+        %br/
+        = label_tag :technology, "Interested Technology"
+        = select_tag :technology, options_for_select([ "Web Development", "Web Designing","Testing" ]),:include_blank => '-Select Technology-'
+        %br/
+        %br/
+        = submit_tag "Filter Record", class: "btn btn-info"
+        = link_to "Clear Filter", request.path, class:"btn btn-info" -->

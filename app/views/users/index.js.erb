@@ -1,6 +1,13 @@
 $("#users").html("<%= escape_javascript(render("users")) %>");
-
 $('.pagination > a').attr('data-remote', 'true');
+
+
+// haml
+// $("#users").html("#{escape_javascript(render("users"))}");
+// $('.pagination > a').attr('data-remote', 'true');
+
+
+
 
 
 
